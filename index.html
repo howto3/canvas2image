@@ -150,18 +150,15 @@
                         var jsonDetailStr, jsonDetailArr;
                         try{
                             for(var i = 0; i < jsonArr.length; i++){
-                                //console.log(jsonArr[i]);
+                                console.log(jsonArr[i]);
                                 
                                 jsonDetailStr = JSON.stringify(jsonArr[i]);
                                 jsonDetailArr = JSON.parse(jsonDetailStr);
-                                console.log(jsonDetailArr.DATA_1 + " || " + jsonDetailArr.DATA_2 + " || " + jsonDetailArr.DATA_3);
-                                
+                                $("#my_file_output").text(jsonDetailArr.item_no + " || " + jsonDetailArr.item_name + " || " + jsonDetailArr.item_price);                            
                             }
                         }catch(e){
                             console.log("Exception : " + e);
-                        }
-
-                        $("#my_file_output").text(json);
+                        }                        
                     });//end. forEach
                 }; //end onload
 
